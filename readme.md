@@ -47,7 +47,7 @@ Here is a sample setting file：
 ```
  
 这是一个示例的设置文件：
-```json
+```jsonc
 {
     "form_data": "blablaaaaaaaaa" ,  //除非你知道你在干嘛，否则别管这个
     "mail": {
