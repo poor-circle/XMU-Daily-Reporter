@@ -68,7 +68,7 @@ Here is a sample setting file：
 }
 ```
 
-我们推荐使用QQ邮箱，因为它会在微信/QQ中弹出通知，符合国情。当然你也可以使用你自己喜欢的邮箱。QQ邮箱设置SMTP服务的教程：![https://www.jspxcms.com/documentation/351.html]。你获取的SMTP授权码就是需要填入的密码。
+我们推荐使用QQ邮箱，因为它会在微信/QQ中弹出通知，符合国情。当然你也可以使用你自己喜欢的邮箱。这是[QQ邮箱设置SMTP服务的教程](https://www.jspxcms.com/documentation/351.html) 。注意，你获取的SMTP授权码就是需要填入的密码。
 
 After Edit, you can run this program and it will report automatically. If you set your email address, It will also send an e-mail to your address.
 编辑完成以后，你可以运行该程序，程序会自动打卡。打卡成功后，如果你有设置邮件地址，那么程序会向你的邮箱发送邮件。
