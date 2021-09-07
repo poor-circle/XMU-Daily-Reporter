@@ -13,6 +13,8 @@ You can run it in linux or windows system.
 Download the executable file in github release page.   
 从github的release界面下载程序。   
 
+[Download address 下载地址](https://github.com/poor-circle/XMU-Daily-Reporter/releases)
+
 Remember to choose right version for your system, We only supply ```x64-windows```/```x64-linux``` version now.          
 记得选择合适的系统版本。目前我们只提供```x64-windows```/```x64-linux```两个版本。  
 
