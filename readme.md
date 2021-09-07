@@ -82,7 +82,7 @@ Here is a sample for the email.
 ## scheduled report and multi-user 定时汇报和多用户支持     
 
 This program don't support scheduled report and multi-user. However it's easy to fix the program or use external script to support it.              
-本程序不支持每天自动打卡，运行一次只能打一次卡，不支持多人同时打卡自己修改程序的后果概不负        责。         
+本程序不支持每天自动打卡，运行一次只能打一次卡，不支持多人打卡只支持一个人打卡。自己修改程序的后果我们概不负责。            
 有些人会将在windows上将其设置为开机自启动，也有些人会在linux服务器上设置每日的定时任务来实现真正的全自动打卡。这些都和作者无关。                 
 
 ## security and duty 安全和责任说明
