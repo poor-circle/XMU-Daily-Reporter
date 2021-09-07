@@ -107,3 +107,12 @@ Here is the step for compile：
 2. install vcpkg 安装vcpkg        
 3. install third-party library by vcpkg 用vcpkg安装第三方库          
 4. run cmake and compile 运行cmake并编译            
+
+Here is the third-party library we use：  
+以下是我们依赖的部分第三方库：
+1. boost.asio
+2. mailio
+3. nlohammn_json
+4. httplib
+5. fmt
+6. httplib
