@@ -70,40 +70,40 @@ Here is a sample setting file：
 
 我们推荐使用QQ邮箱，因为它会在微信/QQ中弹出通知，符合国情。当然你也可以使用你自己喜欢的邮箱。这是[QQ邮箱设置SMTP服务的教程](https://www.jspxcms.com/documentation/351.html) 。注意，你获取的SMTP授权码就是需要填入的密码。
 
-After Edit, you can run this program and it will report automatically. If you set your email address, It will also send an e-mail to your address.
+After Edit, you can run this program and it will report automatically. If you set your email address, It will also send an e-mail to your address.         
 编辑完成以后，你可以运行该程序，程序会自动打卡。打卡成功后，如果你有设置邮件地址，那么程序会向你的邮箱发送邮件。
 
-Here is a sample for the email.             
-以下是邮件的示例（含成功和失败两种情况）   
-![succeed](img/email-1.jpg)
-![failed](img/email-2.jpg)
+Here is a sample for the email.              
+以下是邮件的示例（含成功和失败两种情况）     
+![succeed](img/email-1.jpg)            
+![failed](img/email-2.jpg)           
 
 
-## scheduled report and multi-user 定时汇报和多用户支持
+## scheduled report and multi-user 定时汇报和多用户支持     
 
-This program don't support scheduled report and multi-user. However it's easy to fix the program or use external script to support it.             
-本程序不支持每天自动打卡，运行一次只能打一次卡，不支持多人同时打卡自己修改程序的后果概不负责。        
-有些人会将在windows上将其设置为开机自启动，也有些人会在linux服务器上设置每日的定时任务来实现真正的全自动打卡。这些都和作者无关。
+This program don't support scheduled report and multi-user. However it's easy to fix the program or use external script to support it.              
+本程序不支持每天自动打卡，运行一次只能打一次卡，不支持多人同时打卡自己修改程序的后果概不负        责。         
+有些人会将在windows上将其设置为开机自启动，也有些人会在linux服务器上设置每日的定时任务来实现真正的全自动打卡。这些都和作者无关。                 
 
 ## security and duty 安全和责任说明
 
-You shouldn't use this program to lie on your health. If you got a favor or travel to another location, please report it manually. No responsibility is accepted by the author. 
-你不应该使用这个程序撒谎。本程序汇报的内容是可以通过```setting.json```中的```form_data```一项来修改的，本程序只不过默认你身体健康而已。如果你发烧或者移动到其他城市，请及时手动更新表单。
+You shouldn't use this program to lie on your health. If you got a favor or travel to another location, please report it manually. No responsibility is accepted by the author.      
+你不应该使用这个程序撒谎。本程序汇报的内容是可以通过```setting.json```中的```form_data```一项来修改的，本程序只不过默认你身体健康而已。如果你发烧或者移动到其他城市，请及时手动更新表单。      
 
-Your personal info will save in local setting file. Please take care of it.
-你的个人信息将会明文保存在你的本地计算机，请小心照看它防止泄露。
+Your personal info will save in local setting file. Please take care of it.          
+你的个人信息将会明文保存在你的本地计算机，请小心照看它防止泄露。        
 
-We use HTTPS/SSL and AES-128 to encrypt your personal info in communication, which is as same as the offical website. We will not sent it to another. You can read source code to confirm it.
-我们使用HTTPS和SSL证书以及额外的AES-128算法来加密传输你的信息，这和官方网站使用的加密方法是一致的。我们不会将你的个人信息发送给别人，你可以阅读源代码来确认这一点。
+We use HTTPS/SSL and AES-128 to encrypt your personal info in communication, which is as same as the offical website. We will not sent it to another. You can read source code to confirm it.      
+我们使用HTTPS和SSL证书以及额外的AES-128算法来加密传输你的信息，这和官方网站使用的加密方法是一致的。我们不会将你的个人信息发送给别人，你可以阅读源代码来确认这一点。           
 
 ## compile 编译
 
-We use cmake to organize the project, use vcpkg to install third-party library, your c++ compiler should support C++17 standard. 
-我们使用cmake来组织工程，使用vcpkg包管理器来安装第三方库，你的c++编译器需要支持C++17标准。
+We use cmake to organize the project, use vcpkg to install third-party library, your c++ compiler should support C++17 standard.           
+我们使用cmake来组织工程，使用vcpkg包管理器来安装第三方库，你的c++编译器需要支持C++17标准。     
 
-Here is the step for compile：
-以下是编译的步骤
-1. install cmake 安装cmake
-2. install vcpkg 安装vcpkg
-3. install third-party library by vcpkg 用vcpkg安装第三方库
-4. run cmake and compile 运行cmake并编译
+Here is the step for compile：      
+以下是编译的步骤      
+1. install cmake 安装cmake      
+2. install vcpkg 安装vcpkg        
+3. install third-party library by vcpkg 用vcpkg安装第三方库          
+4. run cmake and compile 运行cmake并编译            
