@@ -62,7 +62,7 @@ Here is a sample setting file：
         "duration": 10               //打卡失败时每次重试间隔的秒数
     },
     "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64)",  //除非你知道你在干嘛，否则别管这个
-    //Student's Info
+    //学生个人信息
     "xmu": {
         "ID": "23320779999999",      //你的学号
         "password": "123456"         //你的密码
