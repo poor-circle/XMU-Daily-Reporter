@@ -13,8 +13,8 @@ You can run it in linux or windows system.
 Download the executable file in github release page.   
 从github的release界面下载程序。   
 
-Remember to choose right version for your system, We only supply x64-windows/x64-linux version now.          
-记得选择合适的系统版本。目前我们只提供x64-windows/x64-linux两个版本。  
+Remember to choose right version for your system, We only supply ```x64-windows```/```x64-linux``` version now.          
+记得选择合适的系统版本。目前我们只提供```x64-windows```/```x64-linux```两个版本。  
 
 unzip the file, edit setting in file ```report_setting.json```. The program will create a default setting file when it didn't find it.     
 解压文件，在```report_setting.json```中编辑程序的设置。如果程序找不到它，会自动生成一个默认的配置文件。        
