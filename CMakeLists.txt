@@ -5,22 +5,6 @@ project(daily_reporter VERSION 1.0.0)
 set(CMAKE_CXX_STANDARD 17)
 set(static_link true) # set if enable static link
 
-#config about static link
-if(static_link)
-    if(MSVC)
-        string(REPLACE "/MD" "/MT" CMAKE_CXX_FLAGS ${CMAKE_CXX_FLAGS})
-        string(REPLACE "/MD" "/MT" CMAKE_CXX_FLAGS_DEBUG ${CMAKE_CXX_FLAGS_DEBUG})
-        string(REPLACE "/MD" "/MT" CMAKE_CXX_FLAGS_RELEASE ${CMAKE_CXX_FLAGS_RELEASE})
-    else(MSVC)
-        set(CMAKE_EXE_LINKER_FLAGS "-static")
-        set(CMAKE_EXE_LINKER_FLAGS "-static-libgcc")
-        set(OpenSSL_USE_STATIC_LIBS ON)
-        set(OpenSSL_USE_STATIC_RUNTIME ON)
-        set(nlohmann_json_USE_STATIC_LIBS ON)
-        set(nlohmann_json_USE_STATIC_RUNTIME ON)
-    endif(MSVC)    
-endif()
-
 #set include path
 include_directories(include)
 #set cpp file path
@@ -49,3 +33,18 @@ find_path(CPP_HTTPLIB_INCLUDE_DIRS "httplib.h")
 set(CPACK_PROJECT_NAME ${PROJECT_NAME})
 set(CPACK_PROJECT_VERSION ${PROJECT_VERSION})
 include(CPack)
+
+#config about static link
+if(static_link)
+    if(MSVC)
+        string(REPLACE "/MD" "/MT" CMAKE_CXX_FLAGS ${CMAKE_CXX_FLAGS})
+        string(REPLACE "/MD" "/MT" CMAKE_CXX_FLAGS_DEBUG ${CMAKE_CXX_FLAGS_DEBUG})
+        string(REPLACE "/MD" "/MT" CMAKE_CXX_FLAGS_RELEASE ${CMAKE_CXX_FLAGS_RELEASE})
+    else(MSVC)
+        set(CMAKE_EXE_LINKER_FLAGS "-static")
+        set(OpenSSL_USE_STATIC_LIBS ON)
+        set(OpenSSL_USE_STATIC_RUNTIME ON)
+        set(nlohmann_json_USE_STATIC_LIBS ON)
+        set(nlohmann_json_USE_STATIC_RUNTIME ON)
+    endif(MSVC)    
+endif()
