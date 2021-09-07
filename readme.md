@@ -24,7 +24,7 @@ You need input your student ID, password in setting file. If you want to sent no
 
 
 Here is a sample setting file：  
-```json
+```jsonc
 {
     "form_data": "blablaaaaaaaaa" ,  //Don't change it unless you know what are you doing
     "mail": {
