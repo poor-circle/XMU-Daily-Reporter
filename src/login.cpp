@@ -91,6 +91,7 @@ unique_ptr<httplib::Client> login(const string_view src_url, optional<string_vie
 	auto headers = httplib::Headers{ {"User-Agent",get_user_agent()} };
 	httplib::Client cli(host.data());
 	cli.set_keep_alive(true);
+	cli.enable_server_certificate_verification(false);
 	auto res = cli.Get(path.data(), headers);
 	if (!res)
 		return {};
@@ -115,6 +116,7 @@ unique_ptr<httplib::Client> login(const string_view src_url, optional<string_vie
 	tie(host, path) = url_parse(res->get_header_value("Location"));
 	auto cli2 = make_unique<httplib::Client>(host.data());
 	cli2->set_keep_alive(true);
+	cli2->enable_server_certificate_verification(false);
 	res = cli2->Get(path.data(),headers);
 	if (!res)
 		return {};
