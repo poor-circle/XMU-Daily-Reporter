@@ -13,7 +13,11 @@ add_executable(daily_reporter ${SRC_LIST})
 
 #add third-party library: mailio, OpenSSL, fmt, nlohammn_json and httplib
 find_path(MAILIO_INCLUDE_DIR "mailio/smtp.hpp")
-find_library(MAILIO_LIBRARY "libmailio")
+if(MSVC)
+    find_library(MAILIO_LIBRARY "mailio")
+else(MSVC)
+    find_library(MAILIO_LIBRARY "libmailio")
+endif()
 target_include_directories(daily_reporter PRIVATE ${MAILIO_INCLUDE_DIR})
 target_link_libraries(daily_reporter PRIVATE ${MAILIO_LIBRARY})
 
