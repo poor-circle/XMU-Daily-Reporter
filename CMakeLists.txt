@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.8.0)
 
-project(daily_reporter VERSION 1.0.0)
+project(daily_reporter VERSION 1.0.1)
 
 set(CMAKE_CXX_STANDARD 17)
 set(static_link true) # set if enable static link
@@ -41,6 +41,7 @@ include(CPack)
 #config about static link
 if(static_link)
     if(MSVC)
+        set(VCPKG_TARGET_TRIPLET "x64-windows-static" CACHE STRING "" FORCE)
         string(REPLACE "/MD" "/MT" CMAKE_CXX_FLAGS ${CMAKE_CXX_FLAGS})
         string(REPLACE "/MD" "/MT" CMAKE_CXX_FLAGS_DEBUG ${CMAKE_CXX_FLAGS_DEBUG})
         string(REPLACE "/MD" "/MT" CMAKE_CXX_FLAGS_RELEASE ${CMAKE_CXX_FLAGS_RELEASE})
