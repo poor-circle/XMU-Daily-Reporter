@@ -11,7 +11,7 @@ include_directories(include)
 aux_source_directory(src SRC_LIST)
 add_executable(daily_reporter ${SRC_LIST})
 
-#add third-party library: mailio, OpenSSL, fmt, nlohammn_json and httplib
+#add third-party library: mailio, OpenSSL, fmt, nlohmann_json and httplib
 find_path(MAILIO_INCLUDE_DIR "mailio/smtp.hpp")
 find_library(MAILIO_LIBRARY "mailio")
 target_include_directories(daily_reporter PRIVATE ${MAILIO_INCLUDE_DIR})
