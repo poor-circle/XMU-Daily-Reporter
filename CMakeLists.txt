@@ -3,7 +3,6 @@ cmake_minimum_required(VERSION 3.8.0)
 project(daily_reporter VERSION 1.0.1)
 
 set(CMAKE_CXX_STANDARD 17)
-set(static_link true) # set if enable static link
 
 #set include path
 include_directories(include)
@@ -34,6 +33,8 @@ set(CPACK_PROJECT_NAME ${PROJECT_NAME})
 set(CPACK_PROJECT_VERSION ${PROJECT_VERSION})
 include(CPack)
 
+set(static_link true) # set if enable static link
+
 #config about static link
 if(static_link)
     if(MSVC)
@@ -42,10 +43,6 @@ if(static_link)
         string(REPLACE "/MD" "/MT" CMAKE_CXX_FLAGS_DEBUG ${CMAKE_CXX_FLAGS_DEBUG})
         string(REPLACE "/MD" "/MT" CMAKE_CXX_FLAGS_RELEASE ${CMAKE_CXX_FLAGS_RELEASE})
     else()
-        set(CMAKE_EXE_LINKER_FLAGS "-static-libstdc++")
-        set(OpenSSL_USE_STATIC_LIBS ON)
-        set(OpenSSL_USE_STATIC_RUNTIME ON)
-        set(nlohmann_json_USE_STATIC_LIBS ON)
-        set(nlohmann_json_USE_STATIC_RUNTIME ON)
+        set(CMAKE_EXE_LINKER_FLAGS "-static")
     endif()    
 endif()
