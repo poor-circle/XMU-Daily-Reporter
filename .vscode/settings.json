@@ -1,8 +1,9 @@
 {
   "cmake.configureSettings": {
-    "CMAKE_TOOLCHAIN_FILE": "C://vcpkg//vcpkg//scripts//buildsystems//vcpkg.cmake",
-    "VCPKG_TARGET_TRIPLET": "x64-windows-static",
+    "CMAKE_TOOLCHAIN_FILE": "/root/vcpkg/scripts/buildsystems/vcpkg.cmake",
   },
-  "C_Cpp.default.configurationProvider": "ms-vscode.cmake-tools"
-  
+  "C_Cpp.default.configurationProvider": "ms-vscode.cmake-tools",
+  "files.associations": {
+    "thread": "cpp"
+  }
 }

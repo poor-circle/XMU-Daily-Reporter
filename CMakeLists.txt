@@ -62,6 +62,8 @@ find_package(nlohmann_json CONFIG REQUIRED)
 find_path(CPP_HTTPLIB_INCLUDE_DIRS "httplib.h")
     target_include_directories(daily_reporter PRIVATE ${CPP_HTTPLIB_INCLUDE_DIRS})
 
+find_package(spdlog CONFIG REQUIRED)
+    target_link_libraries(daily_reporter PRIVATE spdlog::spdlog_header_only)
 
 set(CPACK_PROJECT_NAME ${PROJECT_NAME})
 set(CPACK_PROJECT_VERSION ${PROJECT_VERSION})
