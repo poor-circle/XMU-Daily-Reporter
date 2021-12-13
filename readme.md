@@ -112,7 +112,7 @@ Here is the step for compile：
 
 Here is the third-party library we use：  
 以下是我们依赖的部分第三方库：
-1. boost-asio
+1. spdlog
 2. mailio
 3. nlohmann-json
 4. cpp-httplib
