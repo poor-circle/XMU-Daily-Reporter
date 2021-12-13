@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.8.0)
 
-project(daily_reporter VERSION 1.0.1)
+project(daily_reporter VERSION 1.2.0)
 
 set(CMAKE_CXX_STANDARD 17)
 
