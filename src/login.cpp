@@ -138,7 +138,8 @@ unique_ptr<httplib::Client> login(const string_view src_url, optional<string_vie
 	auto location=res->get_header_value("Location");
 	if (location.empty())
 	{
-		SPDLOG_DEBUG("failed to get the redirect-location");
+		SPDLOG_ERROR("failed to get the redirect-location");
+		return{};
 	}
 	tie(host, path) = url_parse(res->get_header_value("Location"));
 	SPDLOG_DEBUG("redirect host:{} path:{}",host, path);
