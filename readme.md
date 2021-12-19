@@ -112,9 +112,9 @@ Here is the step for compile：
 
 Here is the third-party library we use：  
 以下是我们依赖的部分第三方库：
-1. spdlog
-2. mailio
-3. nlohmann-json
-4. cpp-httplib
-5. fmt
-6. OpenSSL
+1. [spdlog](https://github.com/gabime/spdlog)
+2. [mailio](https://github.com/karastojko/mailio)
+3. [nlohmann-json](https://github.com/nlohmann/json)
+4. [cpp-httplib](https://github.com/yhirose/cpp-httplib)
+5. [fmt](https://github.com/fmtlib/fmt)
+6. [OpenSSL](https://www.openssl.org/)
