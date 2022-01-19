@@ -104,13 +104,13 @@ We use cmake to organize the project, use vcpkg to install third-party library, 
 我们使用cmake来组织工程，使用[vcpkg包管理器](https://github.com/microsoft/vcpkg/blob/master/README_zh_CN.md)来安装第三方库，你的c++编译器需要支持C++17标准。     
 
 Here is the step for compile：      
-以下是编译的步骤      
-1. install cmake 安装cmake      
-2. install vcpkg 安装vcpkg        
-3. install third-party library by vcpkg 用vcpkg安装第三方库          
-4. run cmake and compile 运行cmake并编译     
+以下是编译的步骤         
+0. 安装C++编译环境（Windows上安装Visual Studio，Linux上安装gcc/clang）
+1. install vcpkg 安装vcpkg        
+2. install third-party library by vcpkg 用vcpkg安装第三方库          
+3. run cmake and compile 使用IDE，或者直接使用cmake编译本项目
 
-你可以在Windows上使用Visual Studio，在Linux上使用Visual Studio Code等IDE，但仍需使用vcpkg或其他方式安装好第三方库。
+许多IDE都支持CMAKE工程，如Visual Studio，CLION，安装好cmake插件的Visual Studio Code。
 
 Here is the third-party library we use：  
 你需要在vcpkg中安装这些库：
