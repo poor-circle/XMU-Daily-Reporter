@@ -108,13 +108,13 @@ Here is the step for compile：
 1. install cmake 安装cmake      
 2. install vcpkg 安装vcpkg        
 3. install third-party library by vcpkg 用vcpkg安装第三方库          
-4. run cmake and compile 运行cmake并编译            
+4. run cmake and compile 运行cmake并编译     
+
+你可以在Windows上使用Visual Studio，在Linux上使用Visual Studio Code等IDE，但仍需使用vcpkg或其他方式安装好第三方库。
 
 Here is the third-party library we use：  
-以下是我们依赖的部分第三方库：
+你需要在vcpkg中安装这些库：
 1. [spdlog](https://github.com/gabime/spdlog)
 2. [mailio](https://github.com/karastojko/mailio)
 3. [nlohmann-json](https://github.com/nlohmann/json)
 4. [cpp-httplib](https://github.com/yhirose/cpp-httplib)
-5. [fmt](https://github.com/fmtlib/fmt)
-6. [OpenSSL](https://www.openssl.org/)
