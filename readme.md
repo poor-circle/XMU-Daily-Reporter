@@ -101,7 +101,7 @@ We use HTTPS/SSL and AES-128 to encrypt your personal info in communication, whi
 ## compile 编译
 
 We use cmake to organize the project, use vcpkg to install third-party library, your c++ compiler should support C++17 standard.           
-我们使用cmake来组织工程，使用vcpkg包管理器来安装第三方库，你的c++编译器需要支持C++17标准。     
+我们使用cmake来组织工程，使用[vcpkg包管理器](https://github.com/microsoft/vcpkg/blob/master/README_zh_CN.md)来安装第三方库，你的c++编译器需要支持C++17标准。     
 
 Here is the step for compile：      
 以下是编译的步骤      
