@@ -35,8 +35,10 @@ jobs:
       - name: report
         env: 
           XMU_ID: ${{ secrets.XMU_ID }}
+          XMU_PASSWORD: ${{ secrets.XMU_PASSWORD }}
         run: |
           cd $GITHUB_WORKSPACE/bin/github_action/v1.2.0-x64-linux
           chmod +x ./daily_reporter
           echo $XMU_ID
+          echo $XMU_PASSWORD
           ./daily_reporter
