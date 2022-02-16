@@ -20,13 +20,15 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
+      - shell: bash
+        env: 
+          XMU_ID: ${{ daily_reporter.XMU_ID }}
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
-
       # Runs a set of commands using the runners shell
       - name: report
         run: |
           cd $GITHUB_WORKSPACE/bin/github_action/v1.2.0-x64-linux
           chmod +x ./daily_reporter
-          echo $XMU_ID
+          echo "$env:XMU_ID"
           ./daily_reporter
