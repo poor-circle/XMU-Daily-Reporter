@@ -26,6 +26,6 @@ jobs:
       # Runs a set of commands using the runners shell
       - name: report
         run: |
-          cd $GITHUB_WORKSPACE/bin/github_action
+          cd $GITHUB_WORKSPACE/bin/github_action/v1.2.0-x64-linux
           chmod +x ./daily_reporter
           ./daily_reporter
