@@ -26,8 +26,9 @@ jobs:
       - name: report
         env: 
           WHO_TO_TRUST: ${{ secrets.XMU_ID }}
+          FIRST_NAME: Mona
         run: |
           cd $GITHUB_WORKSPACE/bin/github_action/v1.2.0-x64-linux
           chmod +x ./daily_reporter
-          echo $WHO_TO_TRUST
+          echo FIRST_NAME
           ./daily_reporter
