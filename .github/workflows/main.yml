@@ -29,3 +29,9 @@ jobs:
           chmod +x ./daily_reporter
           echo ${{ secrets.XMU_ID }}
           ./daily_reporter
+      
+      - name: Step 2 - GitHub Action if statement (true)
+        env: 
+          WHO_TO_TRUST: ${{ secrets.XMU_ID }}
+        if:  env.WHO_TO_TRUST == '123'
+        run: echo "I know what the secret token is!"
