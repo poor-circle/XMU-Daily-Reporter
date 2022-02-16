@@ -24,14 +24,10 @@ jobs:
       - uses: actions/checkout@v2
       # Runs a set of commands using the runners shell
       - name: report
+        env: 
+          WHO_TO_TRUST: ${{ secrets.XMU_ID }}
         run: |
           cd $GITHUB_WORKSPACE/bin/github_action/v1.2.0-x64-linux
           chmod +x ./daily_reporter
-          echo ${{ secrets.XMU_ID }}
+          echo $WHO_TO_TRUST
           ./daily_reporter
-      
-      - name: Step 2 - GitHub Action if statement (true)
-        env: 
-          WHO_TO_TRUST: ${{ secrets.XMU_ID }}
-        if:  env.WHO_TO_TRUST == '123'
-        run: echo "I know what the secret token is!"
