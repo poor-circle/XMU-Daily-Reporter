@@ -36,7 +36,7 @@ jobs:
         env: 
           SETTING: ${{ secrets.SETTING }}
         run: |
-          cd $GITHUB_WORKSPACE/bin/github_action/v2.0.0-x64-linux
+          cd $GITHUB_WORKSPACE/bin/github_action/
           chmod +x ./daily_reporter
           echo $SETTING > "report_setting.json"
           ./daily_reporter
