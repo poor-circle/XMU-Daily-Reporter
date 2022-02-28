@@ -34,11 +34,9 @@ jobs:
       # Runs a set of commands using the runners shell
       - name: report
         env: 
-          XMU_ID: ${{ secrets.XMU_ID }}
-          XMU_PASSWORD: ${{ secrets.XMU_PASSWORD }}
+          SETTING: ${{ secrets.setting }}
         run: |
-          cd $GITHUB_WORKSPACE/bin/github_action/v1.2.0-x64-linux
+          cd $GITHUB_WORKSPACE/bin/github_action/
           chmod +x ./daily_reporter
-          echo $XMU_ID > "report_setting.json"
-          echo $XMU_PASSWORD
+          echo $SETTING > "report_setting.json"
           ./daily_reporter
