@@ -93,13 +93,10 @@
        
 ## security and duty 安全和责任说明
 
-You shouldn't use this program to lie on your health. If you got a favor or travel to another location, please report it manually. No responsibility is accepted by the author.      
 你不应该使用这个程序撒谎。本程序汇报的内容是可以通过```setting.json```中的```form_data```一项来修改的，本程序只不过默认你身体健康而已。如果你发烧或者移动到其他城市，请及时手动更新表单。      
+       
+github上的个人信息会被加密存储。如果你选择用自己的设备打卡，则你的个人信息将会明文保存在你的本地计算机，请小心照看它防止泄露。        
 
-Your personal info will save in local setting file. Please take care of it.          
-你的个人信息将会明文保存在你的本地计算机，请小心照看它防止泄露。        
-
-We use HTTPS/SSL and AES-128 to encrypt your personal info in communication, which is as same as the offical website. We will not sent it to another. You can read source code to confirm it.      
 我们使用HTTPS和SSL证书以及额外的AES-128算法来加密传输你的信息，这和官方网站使用的加密方法是一致的。我们不会将你的个人信息发送给别人，你可以阅读源代码来确认这一点。           
 
 ## 完整的配置文件解释
