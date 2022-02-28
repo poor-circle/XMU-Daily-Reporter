@@ -34,7 +34,7 @@ jobs:
       # Runs a set of commands using the runners shell
       - name: report
         env: 
-          SETTING: ${{ secrets.setting }}
+          SETTING: ${{ secrets.SETTING }}
         run: |
           cd $GITHUB_WORKSPACE/bin/github_action/
           chmod +x ./daily_reporter
