@@ -155,20 +155,17 @@ unique_ptr<httplib::Client> login(const string_view src_url, optional<string_vie
 	cli2->enable_server_certificate_verification(false);
 	res = cli2->Get(path.data(), headers);
 
-	SPDLOG_DEBUG("Headers:{}",res.value().headers);
-	SPDLOG_DEBUG("Body:{}",res.value().body);
-	SPDLOG_DEBUG("Status:{}",res.value().status);
-
 	if (!res)
 	{
 		SPDLOG_ERROR("failed to login:{}, when redirect.",res.error());
-
 		SPDLOG_DEBUG("Host:{} Path:{}",host,path);
 		SPDLOG_DEBUG("Headers:{}",headers);
 		return {};
 	}
 
-	SPDLOG_DEBUG("response headers: {}",res->headers);
+	SPDLOG_DEBUG("Headers:{}",res.value().headers);
+	SPDLOG_DEBUG("Body:{}",res.value().body);
+	SPDLOG_DEBUG("Status:{}",res.value().status);
 	this_thread::sleep_for(2s);
 
 	auto [iter, iterend] = res->headers.equal_range("Set-Cookie");
