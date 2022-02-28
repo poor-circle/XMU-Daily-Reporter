@@ -61,15 +61,26 @@
 我们推荐使用QQ邮箱，因为它会在微信/QQ中弹出通知，符合国情。当然你也可以使用你自己喜欢的邮箱。这是[QQ邮箱设置SMTP服务的教程](https://www.jspxcms.com/documentation/351.html) 。注意，你获取的SMTP授权码就是需要填入的密码。
       
 现在，大功告成！程序会自动在每天上午六点钟打卡。打卡成功后，如果你有设置邮件地址，那么程序会向你的邮箱发送邮件。
-
-Here is a sample for the email.              
+          
 以下是邮件的示例（含成功和失败两种情况）     
 ![succeed](img/email-1.jpg)            
 ![failed](img/email-2.jpg) 
 
+7. 除了定时打卡，你也可以用这个网站手动打卡。我们建议您现在手动打一次卡，验证一下配置是否正确。
 
-除了定时打卡，你也可以手动打卡。我们建议您现在手动打一次卡，验证一下配置是否正确。
+首先点击左上角的Actions：
 
+![image](https://user-images.githubusercontent.com/51276909/156023756-2b7da67f-35f2-4050-9a79-87991e8b689d.png)
+
+![image](https://user-images.githubusercontent.com/51276909/156023852-f60768ef-63e9-4ebc-b27a-cf4ecd34b77e.png)
+
+点击绿色的Run workflow按钮来触发手动打卡。
+
+刷新页面，可以看到打卡正在进行中：
+
+![image](https://user-images.githubusercontent.com/51276909/156023994-204c03ed-4067-45b5-a4a1-b35409d0bba1.png)
+
+变为绿色则打卡完成。
 
 ### 使用自己的设备打卡
 
@@ -80,7 +91,6 @@ Here is a sample for the email.
 解压文件，在```report_setting.json```中编辑程序的设置。如果程序找不到它，会自动生成一个默认的配置文件。 
 有些人会将在windows上将其设置为开机自启动，也有些人会在linux服务器上设置每日的定时任务来实现真正的全自动打卡。这取决于你的设备情况。    
        
-
 ## security and duty 安全和责任说明
 
 You shouldn't use this program to lie on your health. If you got a favor or travel to another location, please report it manually. No responsibility is accepted by the author.      
