@@ -122,8 +122,3 @@ inline bool check_config()
 	s << default_json().dump(4);
 	return false;
 }
-template<typename T>
-inline void rand_sleep(T duration)
-{
-	std::this_thread::sleep_for((duration/duration.count())*(rand()%duration.count()));
-}

@@ -14,19 +14,15 @@ bool is_in_report_time()
 	auto time = *localtime(&now);
 	return (time.tm_hour < 20 && (time.tm_hour != 19 || time.tm_min <= 30)) && time.tm_hour >= 5;
 }
-optional<string> report(int count = get_report_retry_counts())
+bool report(int count = get_report_retry_counts())
 {
-	if (count <= 0)
-		return {};
-	auto result = report_now();
-	while (result.has_value() && --count > 0)
+	while (--count > 0 && report_now()==false)
 	{
-		SPDLOG_ERROR("Report failed: {}. We will try again after {}s", result.value(), get_report_retry_duration());
+		SPDLOG_ERROR("We will try again after {}s", get_report_retry_duration());
 		SPDLOG_INFO("Least retry count: {}",count);
 		this_thread::sleep_for(get_report_retry_duration() * 1s);
-		result = report_now();
 	}
-	return result;
+	return count>=0;
 }
 int main()
 {
@@ -42,19 +38,15 @@ int main()
 	{
 		SPDLOG_WARN("It is not allowed to report at this time.");
 	}
-	auto result = report();
-	if (result.has_value()) //failed
+	if (report()==false)
 	{
-		send_daily_report_mail(
-			"Daily report is failed!!!!",
-			fmt::format("\r\nfailed resson:{}\r\n", result.value()));
-		SPDLOG_ERROR("Report failed: {}\nPlease report manually", result.value());
+		SPDLOG_ERROR("Report failed, please report manually");
+		send_daily_report_mail("Daily report is failed!!!!");
 	}
-	else //succeed
+	else
 	{
 		SPDLOG_INFO("report succeeed!");
-		send_daily_report_mail(
-			"Daily report is succeed.");
+		send_daily_report_mail("Daily report is succeed.");
 	}
 	this_thread::sleep_for(5s);
 	return 0;

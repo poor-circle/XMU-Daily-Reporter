@@ -24,7 +24,7 @@ string get_smtp_address(string_view mail_address)
     return "smtp." + string(iter + 1, mail_address.end());
 }
 
-void send_daily_report_mail(string_view title, string_view context = "") // if fail_reason is empty means success
+void send_daily_report_mail(string_view title, string_view context = "")
 {
     try
     {

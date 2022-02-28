@@ -89,6 +89,7 @@ unique_ptr<httplib::Client> login(const string_view src_url, optional<string_vie
 	auto headers = httplib::Headers{{"User-Agent", get_user_agent()}};
 	httplib::Client cli(host.data());
 	cli.set_keep_alive(true);
+	cli.set_read_timeout(100s);
 	cli.enable_server_certificate_verification(false);
 	auto res = cli.Get(path.data(), headers);
 	if (!res)
@@ -103,10 +104,10 @@ unique_ptr<httplib::Client> login(const string_view src_url, optional<string_vie
 	SPDLOG_DEBUG("Cookie for try to login:{}", res->get_header_value("Set-Cookie"));
 
 	headers.emplace("Cookie", res->get_header_value("Set-Cookie"));
-	rand_sleep(500ms);
+	this_thread::sleep_for(2s);
 	auto [username, password] = get_user_info();
 
-	SPDLOG_INFO("Login username:{}",username);
+	SPDLOG_DEBUG("Login username:{}",username);
 	SPDLOG_DEBUG("Login password:{}",password);
 
 	auto params = httplib::Params
@@ -146,18 +147,24 @@ unique_ptr<httplib::Client> login(const string_view src_url, optional<string_vie
 
 	auto cli2 = make_unique<httplib::Client>(host.data());
 	cli2->set_keep_alive(true);
+	cli2->set_read_timeout(100s);
 	cli2->enable_server_certificate_verification(false);
 	res = cli2->Get(path.data(), headers);
+
+	SPDLOG_DEBUG("Headers:{}",res.value().headers);
+	SPDLOG_DEBUG("Body:{}",res.value().body);
+	SPDLOG_DEBUG("Status:{}",res.value().status);
+
 	if (!res)
 	{
 		SPDLOG_ERROR("failed to login when redirect.");
-		SPDLOG_ERROR("Host:{} Path:{}",host,path);
-		SPDLOG_ERROR("Headers:{}",headers);
+		SPDLOG_DEBUG("Host:{} Path:{}",host,path);
+		SPDLOG_DEBUG("Headers:{}",headers);
 		return {};
 	}
 
 	SPDLOG_DEBUG("response headers: {}",res->headers);
-	rand_sleep(500ms);
+	this_thread::sleep_for(2s);
 
 	auto [iter, iterend] = res->headers.equal_range("Set-Cookie");
 	for (; iter != iterend; ++iter)
@@ -165,29 +172,38 @@ unique_ptr<httplib::Client> login(const string_view src_url, optional<string_vie
 		if (iter->second.find("SAAS_U") != string::npos)
 		{
 			cli2->set_default_headers({{"User-Agent", get_user_agent()}, {"Cookie", iter->second}});
-			if (login_check_path.has_value())
-			{
-				res = cli2->Get(string(login_check_path.value()).data());
-				if (!res)
-				{
-					SPDLOG_ERROR("login check failed! SAAS_U:{}",iter->second);
-					return {};
-				}
-				if (res->status != 200)
-				{
-					SPDLOG_ERROR("login check failed! SAAS_U:{}",iter->second);
-					SPDLOG_ERROR("login check result:");
-					SPDLOG_ERROR("Headers:{}",res.value().headers);
-					SPDLOG_ERROR("Body:{}",res.value().body);
-					SPDLOG_ERROR("Status:{}",res.value().status);
-					return {};
-				}
-			}
-			SPDLOG_INFO("login succeed! {}",iter->second);
-			return cli2;
+			break;
 		}
 	}
+	if (iter == iterend)
+	{
+		SPDLOG_ERROR("Can't found the cookie called SAAS_U for saving the login status!");
+		return {};
+	}
 	
-	SPDLOG_ERROR("Can't found the cookie called SAAS_U for saving the login status!");
-	return {};
+	SPDLOG_INFO("login succeed!");
+	SPDLOG_DEBUG(iter->second);
+	
+	if (login_check_path.has_value())
+	{
+		res = cli2->Get(string(login_check_path.value()).data());
+		SPDLOG_DEBUG("Headers:{}",res.value().headers);
+		SPDLOG_DEBUG("Body:{}",res.value().body);
+		SPDLOG_DEBUG("Status:{}",res.value().status);
+		if (!res)
+		{
+			SPDLOG_ERROR("login check failed!");
+			return {};
+		}
+		if (res->status != 200)
+		{
+			SPDLOG_ERROR("login check failed!");
+			SPDLOG_DEBUG("Headers:{}",res.value().headers);
+			SPDLOG_DEBUG("Body:{}",res.value().body);
+			SPDLOG_DEBUG("Status:{}",res.value().status);
+			return {};
+		}
+	}
+
+	return cli2;
 }
