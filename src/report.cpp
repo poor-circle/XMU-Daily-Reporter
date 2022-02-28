@@ -14,14 +14,14 @@ bool report_now()
 		auto cli = login("https://xmuxg.xmu.edu.cn/login/cas/xmu", "/platform");
 		if (!cli)
 		{
-			SPDLOG_ERROR("login failed! please check your username and password.");
+			SPDLOG_ERROR("login failed:{}! please check your username and password.");
 			return false;
 		}
 		this_thread::sleep_for(2s);
 		auto res = cli->Get("/api/app/214/business/now");
 		if (!res)
 		{
-			SPDLOG_ERROR("can't open the report url!");
+			SPDLOG_ERROR("can't open the report url:{}!",res.error());
 			return false;
 		}
 		SPDLOG_DEBUG("Headers:{}",res.value().headers);
@@ -37,7 +37,7 @@ bool report_now()
 		res = cli->Get(fmt::format("/api/formEngine/business/{}/myFormInstance", business_ID.get<size_t>()).data());
 		if (!res)
 		{
-			SPDLOG_ERROR("can't open the report form!");
+			SPDLOG_ERROR("can't open the report form: {}!",res.error());
 			return false;
 		}
 		SPDLOG_DEBUG("Headers:{}",res.value().headers);
@@ -51,9 +51,14 @@ bool report_now()
 		}
 		this_thread::sleep_for(2s);
 		res = cli->Post(fmt::format("/api/formEngine/formInstance/{}", form_ID.get<string>()).data(), get_form_data(), "application/json");
-		if (!res || res->status != 200)
+		if (!res)
 		{
-			SPDLOG_ERROR("post form-data failed");
+			SPDLOG_ERROR("post form-data failed:{}!",res.error());
+			return false;
+		}
+		if (res->status != 200)
+		{
+			SPDLOG_ERROR("post form-data error status code={}!",res->status);
 			return false;
 		}
 		SPDLOG_DEBUG("Headers:{}",res.value().headers);

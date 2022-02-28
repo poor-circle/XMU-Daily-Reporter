@@ -128,7 +128,7 @@ unique_ptr<httplib::Client> login(const string_view src_url, optional<string_vie
 	res = cli.Post(path.data(), headers, params);
 	if (!res)
 	{
-		SPDLOG_ERROR("failed to login when post username and password.");
+		SPDLOG_ERROR("failed to login:{} ,when post username and password.",res.error());
 		return {};
 	}
 
@@ -157,7 +157,8 @@ unique_ptr<httplib::Client> login(const string_view src_url, optional<string_vie
 
 	if (!res)
 	{
-		SPDLOG_ERROR("failed to login when redirect.");
+		SPDLOG_ERROR("failed to login:{}, when redirect.",res.error());
+
 		SPDLOG_DEBUG("Host:{} Path:{}",host,path);
 		SPDLOG_DEBUG("Headers:{}",headers);
 		return {};
@@ -192,7 +193,7 @@ unique_ptr<httplib::Client> login(const string_view src_url, optional<string_vie
 		SPDLOG_DEBUG("Status:{}",res.value().status);
 		if (!res)
 		{
-			SPDLOG_ERROR("login check failed!");
+			SPDLOG_ERROR("login check failed:{}!",res.error());
 			return {};
 		}
 		if (res->status != 200)
