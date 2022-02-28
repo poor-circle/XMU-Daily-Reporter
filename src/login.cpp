@@ -89,12 +89,14 @@ unique_ptr<httplib::Client> login(const string_view src_url, optional<string_vie
 	auto headers = httplib::Headers{{"User-Agent", get_user_agent()}};
 	httplib::Client cli(host.data());
 	cli.set_keep_alive(true);
+	cli.set_connection_timeout(100s);
 	cli.set_read_timeout(100s);
+	cli.set_write_timeout(100s);
 	cli.enable_server_certificate_verification(false);
 	auto res = cli.Get(path.data(), headers);
 	if (!res)
 	{
-		SPDLOG_ERROR("failed to open the XMU Universal login URL:{}",path);
+		SPDLOG_ERROR("failed to open the XMU Universal login URL:{},error_code:{}",path,res.error());
 		return {};
 	}
 
@@ -147,7 +149,9 @@ unique_ptr<httplib::Client> login(const string_view src_url, optional<string_vie
 
 	auto cli2 = make_unique<httplib::Client>(host.data());
 	cli2->set_keep_alive(true);
+	cli2->set_connection_timeout(100s);
 	cli2->set_read_timeout(100s);
+	cli2->set_write_timeout(100s);
 	cli2->enable_server_certificate_verification(false);
 	res = cli2->Get(path.data(), headers);
 

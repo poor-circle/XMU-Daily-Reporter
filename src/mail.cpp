@@ -44,8 +44,9 @@ void send_daily_report_mail(string_view title, string_view context = "")
         smtps conn(smtp_address, 587);
         conn.authenticate(address.data(), password.data(), smtps::auth_method_t::START_TLS);
         conn.submit(msg);
-        SPDLOG_INFO("An E-mail has sent from {0} to {0} by smtp_server:{1}.", address,smtp_address);
-        SPDLOG_INFO("E-mail Reporter name:{}, content:{}",reporter_name,msg.content());
+        SPDLOG_INFO("An E-mail has sent to your address");
+        SPDLOG_DEBUG("from {} to {}",address,smtp_address);
+        SPDLOG_DEBUG("E-mail Reporter name:{}, content:{}",reporter_name,msg.content());
     }
     catch (const exception &err)
     {
