@@ -17,6 +17,7 @@
 
 ![image](https://user-images.githubusercontent.com/51276909/156022152-3102875f-62d1-42c6-846e-324096e4a7e2.png)
 
+这会克隆一个你自己的打卡程序，并跳转到你自己的仓库。
 
 3. 点击Settings:
 
@@ -27,12 +28,17 @@
 ![image](https://user-images.githubusercontent.com/51276909/156022503-4eb5f6ff-ddc3-4af4-bfa7-8fc8e0a18a27.png)
 
 
-5. 点击Update
+5. 点击New repository secret，添加你的个人登录信息。
 
-![image](https://user-images.githubusercontent.com/51276909/156022622-4548c63e-69cb-4136-8c69-46298315e811.png)
+![image](https://user-images.githubusercontent.com/51276909/156101931-ea607179-8bec-49ed-871b-f04c965e2b86.png)
 
-6. 填入以下内容，注意把配置改成你自己的学号，密码，以及邮箱地址和密码。
 
+6. 填入以下内容。
+
+![image](https://user-images.githubusercontent.com/51276909/156102027-3766e951-8d9a-4b0d-bfc2-df1321d6ce59.png)
+
+
+value的内容可以从这里复制，记得把配置改成你自己的学号，密码，以及邮箱地址和密码。
 
 ```jsonc
 {
@@ -58,7 +64,14 @@
 }
 ```
 
+
 我们推荐使用QQ邮箱，因为它会在微信/QQ中弹出通知，符合国情。当然你也可以使用你自己喜欢的邮箱。这是[QQ邮箱设置SMTP服务的教程](https://www.jspxcms.com/documentation/351.html) 。注意，你获取的SMTP授权码就是需要填入的密码。
+
+
+7. 点击Add secret保存配置。
+
+![image](https://user-images.githubusercontent.com/51276909/156102191-e5b24a05-7935-46bf-bc75-b09f3e82d059.png)
+
       
 现在，大功告成！程序会自动在每天上午六点钟打卡。打卡成功后，如果你有设置邮件地址，那么程序会向你的邮箱发送邮件。
           
@@ -66,7 +79,7 @@
 ![succeed](img/email-1.jpg)            
 ![failed](img/email-2.jpg) 
 
-7. 除了定时打卡，你也可以用这个网站手动打卡。我们建议您现在手动打一次卡，验证一下配置是否正确。
+8. 除了定时打卡，你也可以用这个网站手动打卡。我们建议您现在手动打一次卡，验证一下配置是否正确。
 
 点击左上角的Actions：
 
