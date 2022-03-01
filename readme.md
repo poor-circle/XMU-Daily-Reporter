@@ -72,18 +72,24 @@ value的内容可以从这里复制，记得把配置改成你自己的学号，
 
 ![image](https://user-images.githubusercontent.com/51276909/156102191-e5b24a05-7935-46bf-bc75-b09f3e82d059.png)
 
-      
-现在，大功告成！程序会自动在每天上午六点钟打卡。打卡成功后，如果你有设置邮件地址，那么程序会向你的邮箱发送邮件。
-          
-以下是邮件的示例（含成功和失败两种情况）     
-![succeed](img/email-1.jpg)            
-![failed](img/email-2.jpg) 
+8. 激活定时打卡
 
-8. 除了定时打卡，你也可以用这个网站手动打卡。我们建议您现在手动打一次卡，验证一下配置是否正确。
-
-点击左上角的Actions：
+回到主页，点击左上角的Actions：
 
 ![image](https://user-images.githubusercontent.com/51276909/156023756-2b7da67f-35f2-4050-9a79-87991e8b689d.png)
+
+点击绿色按钮激活脚本功能
+
+![image](https://user-images.githubusercontent.com/51276909/156103209-1bdb465e-3de6-4ff7-8c11-ecf182cf110a.png)
+
+点击Enbale workflow激活定时打卡功能
+
+![image](https://user-images.githubusercontent.com/51276909/156103315-13d053d0-02e6-4929-a215-9db9ed41ee57.png)
+
+现在，程序会自动在每天上午六点钟打卡。
+      
+
+9. 除了定时打卡，你也可以用这个网站手动打卡。我们建议您现在手动打一次卡，验证一下配置是否正确。
 
 ![image](https://user-images.githubusercontent.com/51276909/156023852-f60768ef-63e9-4ebc-b27a-cf4ecd34b77e.png)
 
@@ -99,6 +105,17 @@ value的内容可以从这里复制，记得把配置改成你自己的学号，
 
 ![image](https://user-images.githubusercontent.com/51276909/156100629-951f7ee5-db38-48e6-bfa6-bfd6100062cc.png)
 
+10. 打卡成功后，如果你有设置邮件地址，那么程序会向你的邮箱发送邮件。
+          
+以下是邮件的示例（含成功和失败两种情况）     
+![succeed](img/email-1.jpg)            
+![failed](img/email-2.jpg) 
+
+11. 如果要修改定时打卡时间，请打开文件： .github/workflows/main.yml
+
+![image](https://user-images.githubusercontent.com/51276909/156103631-71d74364-5fa2-4207-b085-2de299ac680a.png)
+
+这里的 0 22 * * * 代表在UTC+0的时区的22点打卡。由于中国是UTC+8时区，因此默认是早上六点打卡。你可以修改这个配置来更改打卡时间。
 
 ### 使用自己的设备打卡
 
