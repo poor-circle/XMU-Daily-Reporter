@@ -111,7 +111,7 @@ value的内容可以从这里复制，记得把配置改成你自己的学号，
 
 ![succeed](https://user-images.githubusercontent.com/51276909/156104359-b2c6310c-23de-472e-894e-495b84d3db45.png)
    
-![failed](![image](https://user-images.githubusercontent.com/51276909/156104386-237671ae-4178-4261-a400-e28137c6e11a.png)) 
+![failed](https://user-images.githubusercontent.com/51276909/156104386-237671ae-4178-4261-a400-e28137c6e11a.png)
 
 11. 如果要修改定时打卡时间，请打开文件： [.github/workflows/main.yml](.github/workflows/main.yml)
 
