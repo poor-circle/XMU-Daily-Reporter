@@ -107,9 +107,11 @@ value的内容可以从这里复制，记得把配置改成你自己的学号，
 
 10. 打卡成功后，如果你有设置邮件地址，那么程序会向你的邮箱发送邮件。
           
-以下是邮件的示例（含成功和失败两种情况）     
-![succeed](img/email-1.jpg)            
-![failed](img/email-2.jpg) 
+以下是邮件的示例（含成功和失败两种情况）    
+
+![succeed](https://user-images.githubusercontent.com/51276909/156104359-b2c6310c-23de-472e-894e-495b84d3db45.png)
+   
+![failed](![image](https://user-images.githubusercontent.com/51276909/156104386-237671ae-4178-4261-a400-e28137c6e11a.png)) 
 
 11. 如果要修改定时打卡时间，请打开文件： [.github/workflows/main.yml](.github/workflows/main.yml)
 
