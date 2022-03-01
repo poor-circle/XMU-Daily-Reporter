@@ -111,7 +111,7 @@ value的内容可以从这里复制，记得把配置改成你自己的学号，
 ![succeed](img/email-1.jpg)            
 ![failed](img/email-2.jpg) 
 
-11. 如果要修改定时打卡时间，请打开文件： .github/workflows/main.yml
+11. 如果要修改定时打卡时间，请打开文件： [.github/workflows/main.yml](.github/workflows/main.yml)
 
 ![image](https://user-images.githubusercontent.com/51276909/156103631-71d74364-5fa2-4207-b085-2de299ac680a.png)
 
