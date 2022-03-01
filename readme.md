@@ -68,7 +68,7 @@
 
 7. 除了定时打卡，你也可以用这个网站手动打卡。我们建议您现在手动打一次卡，验证一下配置是否正确。
 
-首先点击左上角的Actions：
+点击左上角的Actions：
 
 ![image](https://user-images.githubusercontent.com/51276909/156023756-2b7da67f-35f2-4050-9a79-87991e8b689d.png)
 
@@ -81,6 +81,11 @@
 ![image](https://user-images.githubusercontent.com/51276909/156023994-204c03ed-4067-45b5-a4a1-b35409d0bba1.png)
 
 变为绿色则打卡完成。
+
+点击可查看详情：
+
+![image](https://user-images.githubusercontent.com/51276909/156100629-951f7ee5-db38-48e6-bfa6-bfd6100062cc.png)
+
 
 ### 使用自己的设备打卡
 
