@@ -16,7 +16,7 @@ bool is_in_report_time()
 }
 bool report(int count = get_report_retry_counts())
 {
-	while (--count > 0 && report_now()==false)
+	while (count-- > 0 && report_now()==false)
 	{
 		SPDLOG_ERROR("We will try again after {}s", get_report_retry_duration());
 		SPDLOG_INFO("Least retry count: {}",count);

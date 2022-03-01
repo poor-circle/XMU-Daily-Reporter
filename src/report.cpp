@@ -14,7 +14,7 @@ bool report_now()
 		auto cli = login("https://xmuxg.xmu.edu.cn/login/cas/xmu", "/platform");
 		if (!cli)
 		{
-			SPDLOG_ERROR("login failed:{}! please check your username and password.");
+			SPDLOG_ERROR("login failed! please check your username and password.");
 			return false;
 		}
 		this_thread::sleep_for(2s);

@@ -89,9 +89,9 @@ unique_ptr<httplib::Client> login(const string_view src_url, optional<string_vie
 	auto headers = httplib::Headers{{"User-Agent", get_user_agent()}};
 	httplib::Client cli(host.data());
 	cli.set_keep_alive(true);
-	cli.set_connection_timeout(100s);
-	cli.set_read_timeout(100s);
-	cli.set_write_timeout(100s);
+	cli.set_connection_timeout(200s);
+	cli.set_read_timeout(200s);
+	cli.set_write_timeout(200s);
 	cli.enable_server_certificate_verification(false);
 	auto res = cli.Get(path.data(), headers);
 	if (!res)
@@ -146,12 +146,13 @@ unique_ptr<httplib::Client> login(const string_view src_url, optional<string_vie
 	}
 	tie(host, path) = url_parse(res->get_header_value("Location"));
 	SPDLOG_DEBUG("redirect host:{} path:{}",host, path);
+	cli.stop();
 
 	auto cli2 = make_unique<httplib::Client>(host.data());
 	cli2->set_keep_alive(true);
-	cli2->set_connection_timeout(100s);
-	cli2->set_read_timeout(100s);
-	cli2->set_write_timeout(100s);
+	cli2->set_connection_timeout(200s);
+	cli2->set_read_timeout(200s);
+	cli2->set_write_timeout(200s);
 	cli2->enable_server_certificate_verification(false);
 	res = cli2->Get(path.data(), headers);
 
@@ -166,7 +167,6 @@ unique_ptr<httplib::Client> login(const string_view src_url, optional<string_vie
 	SPDLOG_DEBUG("Headers:{}",res.value().headers);
 	SPDLOG_DEBUG("Body:{}",res.value().body);
 	SPDLOG_DEBUG("Status:{}",res.value().status);
-	this_thread::sleep_for(2s);
 
 	auto [iter, iterend] = res->headers.equal_range("Set-Cookie");
 	for (; iter != iterend; ++iter)
