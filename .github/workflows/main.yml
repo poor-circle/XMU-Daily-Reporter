@@ -31,4 +31,4 @@ jobs:
           cd $GITHUB_WORKSPACE/bin/github_action/
           chmod +x ./daily_reporter
           echo $SETTING > "report_setting.json"
-          ./daily_reporter
+          sh start.sh
