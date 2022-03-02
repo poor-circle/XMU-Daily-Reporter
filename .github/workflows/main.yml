@@ -25,7 +25,7 @@ jobs:
       - name: sleep
         run: |
           cd $GITHUB_WORKSPACE/bin/github_action/
-          sh start.sh
+          sh sleep.sh
           
   # This workflow contains a single job called "build"
   daily_report:
