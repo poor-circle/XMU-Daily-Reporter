@@ -27,6 +27,7 @@ jobs:
         env: 
           SETTING: ${{ secrets.SETTING }}
         run: |
+          echo $GITHUB_EVENT_NAME
           cd $GITHUB_WORKSPACE/bin/github_action/
           chmod +x ./daily_reporter
           echo $SETTING > "report_setting.json"
