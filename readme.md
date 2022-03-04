@@ -13,7 +13,7 @@
 
 1. 注册一个github账户。
 
-2. 点击右上角的Fork按钮：
+2. 先点击右上角的Starred按钮，再点击右上角的Fork按钮：
 
 ![image](https://user-images.githubusercontent.com/51276909/156022152-3102875f-62d1-42c6-846e-324096e4a7e2.png)
 
