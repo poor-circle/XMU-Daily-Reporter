@@ -13,7 +13,7 @@
 
 1. 注册一个github账户。
 
-2. 点击右上角的Starred按钮，收藏本
+2. 点击右上角的Starred按钮，收藏本程序
 
 ![image](https://user-images.githubusercontent.com/51276909/156751454-4c7b1d17-bca7-4084-8d0e-fdbf3ea590c8.png)
 
