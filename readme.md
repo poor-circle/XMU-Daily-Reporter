@@ -13,9 +13,13 @@
 
 1. 注册一个github账户。
 
-2. 先点击右上角的Starred按钮，再点击右上角的Fork按钮：
+2. 点击右上角的Starred按钮，收藏本
 
-![image](https://user-images.githubusercontent.com/51276909/156022152-3102875f-62d1-42c6-846e-324096e4a7e2.png)
+![image](https://user-images.githubusercontent.com/51276909/156751454-4c7b1d17-bca7-4084-8d0e-fdbf3ea590c8.png)
+
+3. 再点击右上角的Fork按钮
+
+![image](https://user-images.githubusercontent.com/51276909/156751558-243c0417-db3e-4a46-a5a2-2c10afa36a7f.png)
 
 这会克隆一个你自己的打卡程序，并跳转到你自己的仓库。
 
