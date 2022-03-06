@@ -1,4 +1,4 @@
-name: 'Usptream Sync'
+name: '软件自动更新'
 
 on:
   schedule:
