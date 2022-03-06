@@ -1,4 +1,4 @@
-name: '软件自动更新'
+name: '软件更新'
 
 on:
   schedule:
