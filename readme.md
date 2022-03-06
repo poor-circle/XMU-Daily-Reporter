@@ -95,7 +95,7 @@ value的内容可以从这里复制，记得把配置改成你自己的学号，
 
 9. 除了定时打卡，你也可以用这个网站手动打卡。我们建议您现在手动打一次卡，验证一下配置是否正确。
 
-![image](https://user-images.githubusercontent.com/51276909/156913829-935aa023-fb23-48f2-8025-96f38609b1a9.png)
+![image](https://user-images.githubusercontent.com/51276909/156913850-d598b8b0-1023-4223-b9f7-e7964d069eb0.png)
 
 点击绿色的Run workflow按钮来触发手动打卡。
 
