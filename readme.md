@@ -47,15 +47,15 @@
 
 ```jsonc
 {
-    "xmu": {
-        "ID": "21620192203361",
-        "password": "123456"
-    },
     "mail": {
         "address": "114514114514@qq.com",
         "reporter_name": "HAL-9000",
         "smtp_password": "123456"
     },
+    "xmu": {
+        "ID": "21620207701111",
+        "password": "123456"
+    }
 }
 ```
 注意，`smtp_password`是你的邮箱授权码。
