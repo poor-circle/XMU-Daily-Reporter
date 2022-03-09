@@ -43,16 +43,17 @@
 
 注意，`Name`一定要填入`SETTING`
 
-`Value`的内容可以从这里复制，记得把配置改成你自己的学号，密码，以及邮箱地址和密码。
+`Value`的内容可以从这里复制，记得把配置改成你自己的学号，密码，以及邮箱地址和密码。reporter_name是邮件发送人的名字，可改可不改。
 
 ```jsonc
 {
     "xmu": {
         "ID": "21620192203361",
-        "password": "123456" 
+        "password": "123456"
     },
     "mail": {
         "address": "114514114514@qq.com",
+        "reporter_name": "HAL-9000",
         "smtp_password": "123456"
     },
 }
