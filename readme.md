@@ -32,7 +32,7 @@
 ![image](https://user-images.githubusercontent.com/51276909/156022503-4eb5f6ff-ddc3-4af4-bfa7-8fc8e0a18a27.png)
 
 
-5. 点击New repository secret，添加你的个人登录信息。
+5. 点击`New repository secret`，添加你的个人登录信息。
 
 ![image](https://user-images.githubusercontent.com/51276909/156101931-ea607179-8bec-49ed-871b-f04c965e2b86.png)
 
@@ -133,7 +133,7 @@
 
 ![image](https://user-images.githubusercontent.com/51276909/156103631-71d74364-5fa2-4207-b085-2de299ac680a.png)
 
-这里的 0 22 * * * 代表在UTC+0的时区的22点打卡。由于中国是UTC+8时区，因此默认是早上六点开始执行任务。
+这里的 `0 22 * * *`代表在UTC+0的时区的22点打卡。由于中国是UTC+8时区，因此默认是早上六点开始执行任务。
 
 12. 如果要修改随机打卡的时间段，请打开文件： [bin/github_action/sleep.sh](bin/github_action/sleep.sh)
 
