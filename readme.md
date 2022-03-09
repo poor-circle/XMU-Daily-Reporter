@@ -69,7 +69,7 @@ value的内容可以从这里复制，记得把配置改成你自己的学号，
 ```
 
 
-我们推荐使用QQ邮箱，因为它会在微信/QQ中弹出通知，符合国情。当然你也可以使用你自己喜欢的邮箱。这是[QQ邮箱设置SMTP服务的教程](https://www.jspxcms.com/documentation/351.html) 。注意，你获取的SMTP授权码就是需要填入的密码。
+我们推荐使用QQ邮箱，因为它会在微信/QQ中弹出通知，符合国情。当然你也可以使用你自己喜欢的邮箱。这是[QQ邮箱设置SMTP服务的教程](https://jingyan.baidu.com/article/6079ad0eb14aaa28fe86db5a.html) 。注意，你获取的SMTP授权码就是需要填入的密码。
 
 
 7. 点击Add secret保存配置。
