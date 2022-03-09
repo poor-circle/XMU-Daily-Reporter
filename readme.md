@@ -41,6 +41,7 @@
 
 ![image](https://user-images.githubusercontent.com/51276909/156102027-3766e951-8d9a-4b0d-bfc2-df1321d6ce59.png)
 
+注意，Name一定要填入`SETTING`
 
 value的内容可以从这里复制，记得把配置改成你自己的学号，密码，以及邮箱地址和密码。
 
@@ -56,6 +57,9 @@ value的内容可以从这里复制，记得把配置改成你自己的学号，
     },
 }
 ```
+注意，smtp_password是你的邮箱授权码。
+我们推荐使用QQ邮箱，因为它会在微信/QQ中弹出通知，符合国情。当然你也可以使用你自己喜欢的邮箱。这是[QQ邮箱设置SMTP服务的教程](https://jingyan.baidu.com/article/6079ad0eb14aaa28fe86db5a.html) 。注意，你获取的SMTP授权码就是需要填入的密码。
+
 
 如果你不需要程序发送邮件提醒你打卡结果，则可以删掉邮箱有关的配置，如下所示：
 
@@ -67,10 +71,6 @@ value的内容可以从这里复制，记得把配置改成你自己的学号，
     }
 }
 ```
-
-
-我们推荐使用QQ邮箱，因为它会在微信/QQ中弹出通知，符合国情。当然你也可以使用你自己喜欢的邮箱。这是[QQ邮箱设置SMTP服务的教程](https://jingyan.baidu.com/article/6079ad0eb14aaa28fe86db5a.html) 。注意，你获取的SMTP授权码就是需要填入的密码。
-
 
 7. 点击Add secret保存配置。
 
@@ -91,7 +91,6 @@ value的内容可以从这里复制，记得把配置改成你自己的学号，
 ![image](https://user-images.githubusercontent.com/51276909/156103315-13d053d0-02e6-4929-a215-9db9ed41ee57.png)
 
 现在，程序会自动在每天上午六点钟到八点钟，随机选择一个时间开始打卡。
-      
 
 9. 除了定时打卡，你也可以用这个网站手动打卡。我们建议您现在手动打一次卡，验证一下配置是否正确。
 
@@ -103,11 +102,22 @@ value的内容可以从这里复制，记得把配置改成你自己的学号，
 
 ![image](https://user-images.githubusercontent.com/51276909/156023994-204c03ed-4067-45b5-a4a1-b35409d0bba1.png)
 
-变为绿色则打卡完成。
+变为绿色则程序运行完毕。
 
-点击可查看详情：
+点击查看详情，可确认是否打卡成功：
 
-![image](https://user-images.githubusercontent.com/51276909/156100629-951f7ee5-db38-48e6-bfa6-bfd6100062cc.png)
+![image](https://user-images.githubusercontent.com/51276909/157470704-88285faf-e80c-493a-9492-e3bbd1d6f82e.png)
+
+![image](https://user-images.githubusercontent.com/51276909/157470762-14e2897e-82f3-4172-a3ce-af6fa113a729.png)
+
+如果打卡失败，并显示：
+
+![image](https://user-images.githubusercontent.com/51276909/157470945-ac0e64f7-edc2-4851-a49f-80fc476fb708.png)
+
+则说明你的配置有误。请更新你的学号和密码。
+
+![image](https://user-images.githubusercontent.com/51276909/157471204-10790e82-e539-4a33-9efa-84b833e302d1.png)
+
 
 10. 打卡成功后，如果你有设置邮件地址，那么程序会向你的邮箱发送邮件。
           
