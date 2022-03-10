@@ -59,7 +59,7 @@
 }
 ```
 注意，`smtp_password`是你的邮箱授权码。
-我们推荐使用QQ邮箱，因为它会在微信/QQ中弹出通知，符合国情。当然你也可以使用你自己喜欢的邮箱。这是[QQ邮箱设置SMTP服务的教程](https://jingyan.baidu.com/article/6079ad0eb14aaa28fe86db5a.html) 。注意，你获取的SMTP授权码就是需要填入的密码。
+我们推荐使用QQ邮箱，因为它会在微信/QQ中弹出通知，符合国情。当然你也可以使用你自己喜欢的邮箱。这是[QQ邮箱设置SMTP服务的教程](https://jingyan.baidu.com/article/6079ad0eb14aaa28fe86db5a.html) 。注意，你获取的SMTP授权码就是需要填入的`smtp_password`。
 
 
 如果你不需要程序发送邮件提醒你打卡结果，则可以删掉邮箱有关的配置，如下所示：
@@ -135,6 +135,8 @@
 ![image](https://user-images.githubusercontent.com/51276909/156103631-71d74364-5fa2-4207-b085-2de299ac680a.png)
 
 这里的 `0 22 * * *`代表在UTC+0的时区的22点打卡。由于中国是UTC+8时区，因此默认是早上六点开始执行任务。
+
+如果想要改成早上八点开始打卡，可以将`0 22 * * *` 改成 `0 0 * * *`
 
 12. 如果要修改随机打卡的时间段，请打开文件： [bin/github_action/sleep.sh](bin/github_action/sleep.sh)
 
