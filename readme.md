@@ -75,7 +75,7 @@
 
 7. 点击`Add secret`保存配置。
 
-![image](https://user-images.githubusercontent.com/51276909/156102191-e5b24a05-7935-46bf-bc75-b09f3e82d059.png)
+![image](https://user-images.githubusercontent.com/51276909/159812648-f2037fd3-f728-43f7-9f89-291750d9b56e.png)
 
 8. 激活定时打卡
 
