@@ -39,11 +39,11 @@
 
 6. 填入以下内容。
 
-![image](https://user-images.githubusercontent.com/51276909/159812352-ffce0ca8-3a98-48e3-833d-98e3a9443264.png)
+![image](https://user-images.githubusercontent.com/51276909/159812463-6de68f3d-7b92-4aa0-be41-80a8d7882bc8.png)
 
 注意，`Name`一定要填入`SETTING`
 
-`Value`的内容可以从这里复制，记得把配置改成你自己的学号，密码，以及邮箱地址和密码。reporter_name是邮件发送人的名字，可改可不改。
+`Value`的内容可以从下面复制，记得把配置改成你自己的学号，密码，以及邮箱地址和密码。reporter_name是邮件发送人的名字，可改可不改。
 
 ```jsonc
 {
