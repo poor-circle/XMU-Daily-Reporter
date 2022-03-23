@@ -39,7 +39,7 @@
 
 6. 填入以下内容。
 
-![image](https://user-images.githubusercontent.com/51276909/156102027-3766e951-8d9a-4b0d-bfc2-df1321d6ce59.png)
+![image](https://user-images.githubusercontent.com/51276909/159812352-ffce0ca8-3a98-48e3-833d-98e3a9443264.png)
 
 注意，`Name`一定要填入`SETTING`
 
