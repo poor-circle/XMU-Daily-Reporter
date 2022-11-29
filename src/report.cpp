@@ -21,10 +21,10 @@ bool report_now()
 		auto res = cli->Get("/api/app/214/business/now");
 		if (!res)
 		{
-			SPDLOG_ERROR("can't open the report url:{}!",res.error());
+			SPDLOG_ERROR("can't open the report url:{}!",to_string(res.error()));
 			return false;
 		}
-		SPDLOG_DEBUG("Headers:{}",res.value().headers);
+		//SPDLOG_DEBUG("Headers:{}",res.value().headers);
 		SPDLOG_DEBUG("Body:{}",res.value().body);
 		SPDLOG_DEBUG("Status:{}",res.value().status);
 		auto business_ID = json::parse(res->body).at("data").at(0).at("business").at("id");
@@ -37,11 +37,11 @@ bool report_now()
 		res = cli->Get(fmt::format("/api/formEngine/business/{}/myFormInstance", business_ID.get<size_t>()).data());
 		if (!res)
 		{
-			SPDLOG_ERROR("can't open the report form: {}!",res.error());
+			SPDLOG_ERROR("can't open the report form: {}!",to_string(res.error()));
 			return false;
 		}
-		SPDLOG_DEBUG("Headers:{}",res.value().headers);
-		SPDLOG_DEBUG("Body:{}",res.value().body);
+		//SPDLOG_DEBUG("Headers:{}",res.value().headers);
+		//SPDLOG_DEBUG("Body:{}",res.value().body);
 		SPDLOG_DEBUG("Status:{}",res.value().status);
 		auto form_ID = json::parse(res->body).at("data").at("id");
 		if (!form_ID.is_string())
@@ -53,7 +53,7 @@ bool report_now()
 		res = cli->Post(fmt::format("/api/formEngine/formInstance/{}", form_ID.get<string>()).data(), get_form_data(), "application/json");
 		if (!res)
 		{
-			SPDLOG_ERROR("post form-data failed:{}!",res.error());
+			SPDLOG_ERROR("post form-data failed:{}!",to_string(res.error()));
 			return false;
 		}
 		if (res->status != 200)
@@ -61,7 +61,7 @@ bool report_now()
 			SPDLOG_ERROR("post form-data error status code={}!",res->status);
 			return false;
 		}
-		SPDLOG_DEBUG("Headers:{}",res.value().headers);
+		//SPDLOG_DEBUG("Headers:{}",res.value().headers);
 		SPDLOG_DEBUG("Body:{}",res.value().body);
 		SPDLOG_DEBUG("Status:{}",res.value().status);
 		if (json::parse(res->body).at("state") == false)

@@ -38,6 +38,7 @@ int main()
 	{
 		SPDLOG_WARN("It is not allowed to report at this time.");
 	}
+	SPDLOG_INFO("Start reported");
 	if (report()==false)
 	{
 		SPDLOG_ERROR("Report failed, please report manually");
