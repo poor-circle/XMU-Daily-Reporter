@@ -51,8 +51,10 @@ jobs:
       - name: get core dump
         if: always()
         run: |
+          ll
           cd $GITHUB_WORKSPACE/bin/github_action/
           sudo echo "Get coredump"
+          ll
           cp core.* /var/crash
           sudo chmod -R +rwx /var/crash/*
       - uses: actions/upload-artifact@master # capture all crashes as build artifacts
