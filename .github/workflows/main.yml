@@ -45,4 +45,10 @@ jobs:
           cd $GITHUB_WORKSPACE/bin/github_action/
           chmod +x ./daily_reporter
           echo $SETTING > "report_setting.json"
-          ./daily_reporter
+          ulimit -c unlimited
+          sudo ./daily_reporter
+          sudo chmod -R +rwx /var/crash/*
+      - uses: actions/upload-artifact@master # capture all crashes as build artifacts
+        with:
+          name: crashes
+          path: /var/crash
