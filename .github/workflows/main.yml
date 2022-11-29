@@ -46,13 +46,17 @@ jobs:
           chmod +x ./daily_reporter
           echo $SETTING > "report_setting.json"
           ulimit -c unlimited
-          sudo ./daily_reporter ?> 1.out &
-          sleep 20
-          less 1.out
+          sudo ./daily_reporter
+      # Runs a set of commands using the runners shell
+      - name: get core dump
+        if: always()
+        run: |
+          cd $GITHUB_WORKSPACE/bin/github_action/
           sudo echo "Get coredump"
           cp core.* /var/crash
           sudo chmod -R +rwx /var/crash/*
       - uses: actions/upload-artifact@master # capture all crashes as build artifacts
+        if: always()
         with:
           name: crashes
           path: /var/crash
