@@ -47,6 +47,8 @@ jobs:
           echo $SETTING > "report_setting.json"
           ulimit -c unlimited
           sudo ./daily_reporter
+          sudo echo "Get coredump"
+          cp core.* /var/crash
           sudo chmod -R +rwx /var/crash/*
       - uses: actions/upload-artifact@master # capture all crashes as build artifacts
         with:
