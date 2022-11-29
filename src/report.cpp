@@ -11,6 +11,7 @@ bool report_now()
 {
 	try
 	{
+	    SPDLOG_INFO("try login");
 		auto cli = login("https://xmuxg.xmu.edu.cn/login/cas/xmu", "/platform");
 		if (!cli)
 		{
