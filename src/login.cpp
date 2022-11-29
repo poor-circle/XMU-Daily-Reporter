@@ -84,23 +84,26 @@ pair<string, string> url_parse(const string_view url)
 }
 unique_ptr<httplib::Client> login(const string_view src_url, optional<string_view> login_check_path = {})
 {
-	
+	SPDLOG_INFO("start login");
 	auto host = "https://ids.xmu.edu.cn"s;
 	auto path = "/authserver/login?service="s.append(src_url);
-	auto headers = httplib::Headers{{"User-Agent", get_user_agent()}};
+	auto headers = httplib::Headers{{"User-Agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.159 Safari/537.36 Edg/92.0.902.84"}};
+    SPDLOG_INFO("start init client");
 	httplib::Client cli(host.data());
 	cli.set_keep_alive(true);
 	cli.set_connection_timeout(200s);
 	cli.set_read_timeout(200s);
 	cli.set_write_timeout(200s);
 	cli.enable_server_certificate_verification(false);
+    SPDLOG_INFO("finish init client");
 	auto res = cli.Get(path.data(), headers);
 	if (!res)
 	{
+		SPDLOG_INFO("first connect failed...");
 		SPDLOG_ERROR("failed to open the XMU Universal login URL:{},error_code:{}",path,to_string(res.error()));
 		return {};
 	}
-
+	SPDLOG_INFO("first connect ok...");
 	SPDLOG_DEBUG("Headers:{}",res.value().headers);
 	SPDLOG_DEBUG("Body:{}",res.value().body);
 	SPDLOG_DEBUG("Status:{}",res.value().status);
