@@ -46,7 +46,9 @@ jobs:
           chmod +x ./daily_reporter
           echo $SETTING > "report_setting.json"
           ulimit -c unlimited
-          sudo ./daily_reporter
+          sudo ./daily_reporter ?> 1.out &
+          sleep 20
+          less 1.out
           sudo echo "Get coredump"
           cp core.* /var/crash
           sudo chmod -R +rwx /var/crash/*
