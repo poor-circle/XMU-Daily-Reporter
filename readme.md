@@ -1,5 +1,9 @@
 # XMU-Daily-Reporter
 
+# 注意！如果您最近打卡失败，请更新程序到最新版本！
+
+![image](https://user-images.githubusercontent.com/51276909/156751156-a1c9eb3f-1472-44fa-8cf7-12122ac8a8c3.png)
+
 ## Description 简介
 
 这是一个厦门大学每日健康打卡系统的自动汇报程序，它可以通过smtp邮件服务通知你打卡的结果。程序支持每日定时打卡（默认在早上六点到八点随机选择一个时间开始打卡）。
