@@ -1,5 +1,9 @@
 # XMU-Daily-Reporter
 
+# 经过三年的斗争，新冠成功打败了我们！从2022年12月9日起，厦门大学停止健康打卡！谢谢你莉酱！
+
+由于健康打卡已停止，本项目停止维护。
+
 # 注意！如果您最近打卡失败，请更新程序到最新版本！
 
 ![image](https://user-images.githubusercontent.com/51276909/156751156-a1c9eb3f-1472-44fa-8cf7-12122ac8a8c3.png)
